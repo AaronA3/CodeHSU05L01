@@ -18,6 +18,10 @@ public class Rectangle { //make public for CS A
     private double perimeter;
 
     //default constructor (make public for CS A)
+
+    /**
+     * @description Default constructor that creates a unit triangle
+     */
     public Rectangle(){
         width = 1.0;
         height = 1.0;
@@ -26,7 +30,7 @@ public class Rectangle { //make public for CS A
     //overloaded constructor (with parameters)
 
     /**
-     * Creates a Rectangle object with specified width and height. If the
+     * @description Creates a Rectangle object with specified width and height. If the
      * parameters are not greater than 0, they are set to 1.0
      *
      * @param w width of the rectangle
@@ -41,7 +45,6 @@ public class Rectangle { //make public for CS A
         if(h > 0){
             height = h;
         }
-
     }
 
     public Rectangle(double width){
@@ -66,27 +69,63 @@ public class Rectangle { //make public for CS A
         return height;
     }
 
+    /**
+     *
+     * @return area of rectangle
+     */
+    public double getArea(){
+        return area;
+    }
+
+    /**
+     *
+     * @return perimeter of the rectangle
+     */
+    public double getPerimeter(){
+        return perimeter;
+    }
+
     //mutators
 
     /**
-     * Allows the user to change the width of the rectangle.
+     * @description Allows the user to change the width of the rectangle.
      *
-     * @param newWidth desired width
+     * @param newWidth
      */
     public void setWidth(double newWidth){
         width = newWidth;
     }
 
+    /**
+     * @description Modifies the height of the rectangle
+     * @param newHeight
+     */
+    public void setHeight(double newHeight) {
+        height = newHeight;
+    }
 
     //other methods
+
+    /**
+     * @description Calculates area of rectangle.
+     */
+    public void calculateArea(){
+        area = height*width;
+    }
+
+    public void calculatePerimeter(){
+        perimeter = 2*width + 2*height;
+    }
+
+
+
 
 
 
 
     //toString method
-
     /**
-     *  Prints the height and width of rectangle to 2 decimal places
+     *  @description Prints the height and width of rectangle to 2 decimal places
      */
     public String toString(){
         DecimalFormat df = new DecimalFormat("#.##");
